@@ -1,12 +1,14 @@
 html{
-    max-width: 1920px;
-    margin: 0 auto;
-    background: -webkit-linear-gradient(0deg, #ffac59,#ffffff);/* Chrome 10-25, Safari 5.1-6 */   
-    background: linear-gradient(0deg, #ffac59,#ffffff);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */           
+    margin: 0 auto; 
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1620px;
+    background-image: url("../Img/gradneed.png");
+    
     font-family: 'Inter', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: unset;
 }
 
 .logo{
@@ -28,7 +30,7 @@ header form{
 }
 
 header input{
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     margin-left: 47px;
     width: 440px;
     height: 75px;
@@ -46,6 +48,7 @@ body
 {
     max-width: 1180px;
     margin: 0 auto;
+    
 }
 
 header{
@@ -80,8 +83,9 @@ header{
     margin-right: 25px;
 }
 
-main{
+.maim-main{
     display: flex;
+    
 }
 
 .Card_Product ul img{
@@ -102,15 +106,41 @@ main{
 }
 .Card_Product li
 {
-    margin-right: 71px;
+    margin-right: 67px;
     margin-bottom: 92px;
     margin-left: 0px;
+    font-size: 24px;
+}
+
+.product_name{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.product_menu p{
+    margin-right: 46px;
+    color: #fff;
+    background-color: #D7903E;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 10px;
+    width: 129px;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.product_menu img{
+    margin-right: 18px;
+    align-items: right;
+    
 }
 
 .Card_Product .product_menu
 {
     display: flex;
-
+    margin-bottom: 18px;
 }
 
 .Category{
@@ -138,3 +168,125 @@ main{
 }
 
 
+footer{
+    display: flex;
+    width: 1180px;
+    height: 90px;
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(215, 144, 62, 1);
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 4px 4px 70px rgba(255, 0, 0, 0.44);
+}
+
+
+.Avtor{
+    margin-left: 600px;
+    /* text-align: right; */
+    
+    
+}
+
+.product_main{
+    text-align: center;
+    align-items: center;
+    width: 1052px;
+    font-size: 24px;
+    height: 1536px;
+
+}
+
+.back_link 
+{
+    text-align: right;
+    margin-bottom: 51px;
+    display: block;
+    font-size: 24px;
+    width: 280px;
+    background-color: #D7903E;
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 845px;
+}
+.tovar h2{
+
+    margin-top: 121px;
+    font-size: 48px;
+}
+.Desription{
+    margin-top: 150px;
+    text-align: left;
+}
+
+.Desription-category
+{
+    margin-top: 52px;
+}
+
+
+
+.sell h4{
+    width: 200px;
+    background-color: #D7903E;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 32px;
+    color: #FFF;
+    font-size: 24px;
+}
+
+.sell
+{
+    margin-top: 240px;
+}
+
+.sell p{
+    font-size: 24px;
+    /* display: inline; */
+}
+
+.buy
+{
+    display: flex;
+}
+
+.buy p{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+
+
+.reg_main input{
+    font-size: 24px;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 64px;
+    margin-top: 64px;
+    /* margin-left: -10px; */
+    background-color: #fcc17e;
+    padding: 10px;
+}
+
+.reg_main h1{
+    text-align: center;
+    margin-top: 94px;
+    font-size: 48px;
+}
+
+.reg_main h2{
+    text-align: center;
+    margin-top: 64px;
+    font-size: 38px;
+}
+
+.reg_main button{
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 100px;
+}
