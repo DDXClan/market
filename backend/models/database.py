@@ -53,7 +53,8 @@ class Brand(Base):
 class Product(Base):
     __tablename__ = 'Product'
     id = Column(Integer, primary_key=True, autoincrement=True)
-    product_name = Column(String, nullable=False)
+    img = Column(String)
+    product_name = Column(String, nullable=False, unique=True)
     description = Column(Text, nullable=False)
     category_id = Column(ForeignKey(Category.id))
     brand_id = Column(ForeignKey(Brand.id))
