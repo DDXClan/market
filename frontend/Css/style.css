@@ -2,7 +2,7 @@ html{
     margin: 0 auto; 
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../Img/gradneed.png");
+    background-image: url("../Img/gray.png");
     
     font-family: 'Inter', sans-serif;
 }
@@ -35,7 +35,7 @@ header input{
     width: 440px;
     height: 75px;
     border-radius: 20px;
-    background-color: rgba(215, 144, 62, 1);
+    background-color: rgba(185, 181, 176, 1);
     color: #fff;  
     font-size: 24px;
     margin-right: -60px;
@@ -59,17 +59,19 @@ header{
     margin-bottom: 45px;
 }
 
+
+
 .profile-nav ul{
     display: flex;
     margin-top: -15px;
     padding: 10px;
-    background-color: rgba(215, 144, 62, 1);
+    background-color: rgba(185, 181, 176, 1);
     border-radius: 20px;
     color:#fff;
     align-items: center;
     text-align: center;
     font-size: 24px;
-    box-shadow: 4px 4px 70px rgba(255, 0, 0, 0.44);
+    box-shadow: 4px 4px 70px rgba(16, 17, 16, 0.44);
 }
 .profile-nav img{
     width: 64px;
@@ -96,6 +98,7 @@ header{
 .Card_Product .product_img{
     width: 285px;
     height: 280px;
+    
 }
 
 .Card_Product ul{
@@ -120,16 +123,49 @@ header{
 .product_menu p{
     margin-right: 46px;
     color: #fff;
-    background-color: #D7903E;
+    background-color: rgba(185, 181, 176, 1);
     align-items: center;
     text-align: center;
     justify-content: center;
     vertical-align: middle;
+    position: relative;
+    overflow: hidden;
     padding: 10px;
     width: 129px;
     border-radius: 10px;
     height: 50px;
+    transition: all 0.3s ease-in-out;
 }
+
+.product_menu p::after{
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top:0; left:0;
+    background: linear-gradient(to left,transparent 0%, #fff 40%, #fff 60%, transparent 100%);
+    transform: translate(-100%, -25%) rotate(10deg);
+    opacity: 0.5;
+    filter: blur;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease-in-out;
+    transition: transform 0.55s;    
+    
+}
+
+.product_menu p:hover {
+    
+    transform: scale(1.2, 1.2);
+    
+}
+
+.product_menu p:hover::after{
+    opacity: 1;
+    transform: translate(200%,-25%)rotate(10deg);
+}
+
 
 .product_menu img{
     margin-right: 18px;
@@ -143,8 +179,9 @@ header{
     margin-bottom: 18px;
 }
 
+
 .Category{
-    background-color: rgba(215, 144, 62, 1);
+    background-color: rgba(185, 181, 176, 1);
     color: white;
     vertical-align: middle;
     font-size: 24px;
@@ -152,13 +189,13 @@ header{
     padding-right: 80px;
     border-radius: 20px;
     margin-right: 109px;
-    box-shadow: 4px 4px 70px rgba(255, 0, 0, 0.44);
+    box-shadow: 4px 4px 70px rgba(16, 17, 16, 0.44);
 }
 
-.Category li{
+ .Category li{
     margin-top: 20px;
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
 .Category img{
@@ -167,18 +204,17 @@ header{
     margin-right: 20px;
 }
 
-
 footer{
     display: flex;
     width: 1180px;
     height: 90px;
     font-size: 24px;
     color: #fff;
-    background-color: rgba(215, 144, 62, 1);
+    background-color: rgba(185, 181, 176, 1);
     text-align: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 4px 4px 70px rgba(255, 0, 0, 0.44);
+    box-shadow: 4px 4px 70px rgba(16, 17, 16, 0.44);
 }
 
 
@@ -205,7 +241,7 @@ footer{
     display: block;
     font-size: 24px;
     width: 280px;
-    background-color: #D7903E;
+    background-color: rgba(185, 181, 176, 1);   
     padding: 20px;
     border-radius: 20px;
     margin-left: 845px;
@@ -215,10 +251,18 @@ footer{
     margin-top: 121px;
     font-size: 48px;
 }
-.Desription{
+.Desription {
     margin-top: 150px;
     text-align: left;
+    font-size: 24px;
+    background-color: rgba(185, 181, 176, 1);
+    width: 1200px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 70px rgba(16, 17, 16, 0.44);
+    
 }
+
 
 .Desription-category
 {
@@ -229,7 +273,7 @@ footer{
 
 .sell h4{
     width: 200px;
-    background-color: #D7903E;
+    background-color: rgba(185, 181, 176, 1);;
     padding: 20px;
     border-radius: 20px;
     margin-bottom: 32px;
@@ -252,12 +296,79 @@ footer{
     display: flex;
 }
 
+.buy h4{
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.buy h4::after{
+    content: '';
+    z-index: -1;
+    width: 150%;
+    height: 200%;
+    position: absolute;
+    top:0; left:0;
+    background: linear-gradient(to left,transparent 0%, #fff 40%, #fff 60%, transparent 100%);
+    transform: translate(-100%, -25%) rotate(10deg);
+    opacity: 0.5;
+    filter: blur;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease-in-out;
+    transition: transform 0.55s;
+}
+
+.buy h4:hover {
+    
+    transform: scale(1.2, 1.2);
+    
+}
+
+.buy h4:hover::after{
+    opacity: 1;
+    transform: translate(100%,-25%)rotate(10deg);
+}
+
+
 .buy p{
     margin-top: 20px;
     margin-left: 30px;
 }
 
+.sell h4{
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
 
+.sell h4::after{
+    content: '';
+    z-index: -1;
+    width: 150%;
+    height: 200%;
+    position: absolute;
+    top:0; left:0;
+    background: linear-gradient(to left,transparent 0%, #fff 40%, #fff 60%, transparent 100%);
+    transform: translate(-100%, -25%) rotate(10deg);
+    opacity: 0.5;
+    filter: blur;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease-in-out;
+    transition: transform 0.55s;
+}
+
+.sell h4:hover {
+    
+    transform: scale(1.2, 1.2);
+    
+}
+
+.sell h4:hover::after{
+    opacity: 1;
+    transform: translate(100%,-25%)rotate(10deg);
+}
 
 .reg_main input{
     font-size: 24px;
@@ -288,5 +399,6 @@ footer{
     align-items: center;
     justify-content: center;
     display: flex;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
 }
+
