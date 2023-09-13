@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: fa45fadcf43f
+Revision ID: b7e2b4ce8006
 Revises: 
-Create Date: 2023-09-08 16:58:40.171258
+Create Date: 2023-09-12 17:24:56.743586
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'fa45fadcf43f'
+revision: str = 'b7e2b4ce8006'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -23,12 +23,14 @@ def upgrade() -> None:
     op.create_table('Brand',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('brand_name', sa.String(), nullable=False),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('brand_name')
     )
     op.create_table('Category',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('category_name', sa.String(), nullable=False),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('category_name')
     )
     op.create_table('Roles',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
@@ -41,6 +43,7 @@ def upgrade() -> None:
     sa.Column('description', sa.Text(), nullable=False),
     sa.Column('category_id', sa.Integer(), nullable=True),
     sa.Column('brand_id', sa.Integer(), nullable=True),
+    sa.Column('quantity', sa.Integer(), nullable=True),
     sa.Column('cost', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['brand_id'], ['Brand.id'], ),
     sa.ForeignKeyConstraint(['category_id'], ['Category.id'], ),
@@ -54,7 +57,10 @@ def upgrade() -> None:
     sa.Column('role_id', sa.Integer(), nullable=True),
     sa.Column('created_at', sa.TIMESTAMP(), nullable=False),
     sa.ForeignKeyConstraint(['role_id'], ['Roles.id'], ),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('email'),
+    sa.UniqueConstraint('password'),
+    sa.UniqueConstraint('username')
     )
     op.create_table('Basket',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
