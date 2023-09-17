@@ -1,0 +1,51 @@
+
+.product_main{
+    text-align: center;
+    align-items: center;
+    width: 1052px;
+    font-size: 24px;
+    height: 1536px;
+  
+  }
+  
+  .back_link 
+  {
+    color: #fff; ;
+    text-align: right;
+    margin-bottom: 51px;
+    display: block;
+    font-size: 24px;
+    width: 280px;
+    background-color: rgba(185, 181, 176, 1);   
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 845px;
+  }
+  .tovar h2{
+  
+    margin-top: 121px;
+    font-size: 48px;
+  }
+  .Desription {
+    margin-top: 150px;
+    text-align: left;
+    font-size: 24px;
+    background-color: rgba(185, 181, 176, 1);
+    width: 1200px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 70px rgba(16, 17, 16, 0.44);
+    
+  }
+  
+  
+  .Desription-category
+  {
+    margin-top: 52px;
+  }
+  
+  .tovar img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }

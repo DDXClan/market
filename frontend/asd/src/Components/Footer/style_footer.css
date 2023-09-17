@@ -1,0 +1,20 @@
+footer{
+    display: flex;
+    width: 1180px;
+    height: 90px;
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(185, 181, 176, 1);
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 4px 4px 70px rgba(16, 17, 16, 0.44);
+  }
+  
+  
+  .Avtor{
+    margin-left: 600px;
+    /* text-align: right; */
+    
+    
+  }

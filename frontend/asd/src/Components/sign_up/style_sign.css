@@ -1,0 +1,31 @@
+.reg_main input{
+    font-size: 24px;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 64px;
+    margin-top: 64px;
+    /* margin-left: -10px; */
+    background-color:rgba(185, 181, 176, 1);
+    padding: 10px;
+  }
+  
+  .reg_main h1{
+    text-align: center;
+    margin-top: 94px;
+    font-size: 48px;
+  }
+  
+  .reg_main h2{
+    text-align: center;
+    margin-top: 64px;
+    font-size: 38px;
+  }
+  
+  .reg_main button{
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 200px;
+  }

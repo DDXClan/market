@@ -1,0 +1,125 @@
+html{
+  margin: 0 auto; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("Img/gray.png");
+  
+  font-family: 'Inter', sans-serif;
+}
+ 
+body
+{
+  max-width: 1180px;
+  margin: 0 auto;
+  
+}
+
+
+.main-main{
+  display: flex;
+  
+}
+
+
+
+.sell h4{
+  width: 200px;
+  background-color: rgba(185, 181, 176, 1);;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+  color: #FFF;
+  font-size: 24px;
+}
+
+.sell
+{
+  margin-top: 240px;
+}
+
+.sell p{
+  font-size: 24px;
+  /* display: inline; */
+}
+
+.buy
+{
+  display: flex;
+}
+
+.buy h4{
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.buy h4::after{
+  content: '';
+  z-index: -1;
+  width: 150%;
+  height: 200%;
+  position: absolute;
+  top:0; left:0;
+  background: linear-gradient(to left,transparent 0%, #fff 40%, #fff 60%, transparent 100%);
+  transform: translate(-100%, -25%) rotate(10deg);
+  opacity: 0.5;
+  filter: blur;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease-in-out;
+  transition: transform 0.55s;
+}
+
+.buy h4:hover {
+  
+  transform: scale(1.2, 1.2);
+  
+}
+
+.buy h4:hover::after{
+  opacity: 1;
+  transform: translate(100%,-25%)rotate(10deg);
+}
+
+
+.buy p{
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.sell h4{
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.sell h4::after{
+  content: '';
+  z-index: -1;
+  width: 150%;
+  height: 200%;
+  position: absolute;
+  top:0; left:0;
+  background: linear-gradient(to left,transparent 0%, #fff 40%, #fff 60%, transparent 100%);
+  transform: translate(-100%, -25%) rotate(10deg);
+  opacity: 0.5;
+  filter: blur;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease-in-out;
+  transition: transform 0.55s;
+}
+
+.sell h4:hover {
+  
+  transform: scale(1.2, 1.2);
+  
+}
+
+.sell h4:hover::after{
+  opacity: 1;
+  transform: translate(100%,-25%)rotate(10deg);
+}
+
+
+

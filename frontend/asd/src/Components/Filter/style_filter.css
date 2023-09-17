@@ -1,0 +1,25 @@
+.Category{
+    background-color: rgba(185, 181, 176, 1);
+    color: white;
+    vertical-align: middle;
+    font-size: 24px;
+    padding: 20px;
+    padding-right: 80px;
+    border-radius: 20px;
+    margin-right: 80px;
+    display: inline-block;
+    box-shadow: 4px 4px 70px rgba(16, 17, 16, 0.44);
+  }
+  
+  .Category li{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .Category img{
+    width: 64px;
+    height: 64px;
+    margin-right: 20px;
+  }
+  
