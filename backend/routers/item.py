@@ -1,31 +1,52 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends, Request, UploadFile, Form
+from typing import Annotated
 from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
 from models.database import get_session, Product, Category, Brand
 from sqlalchemy import select
+from fastapi import File
+import os
 
 item = APIRouter(prefix='/item', tags=['item'])
 
 
-class CreateItem(BaseModel):
-    product_name: str
-    description: str
-    quantity: int
-    cost: int
-    category_id: int
-    brand_id: int
-
+# class CreateItem(BaseModel):
+#     product_name: str
+#     description: str
+#     quantity: int
+#     cost: int
+#     category_id: int
+#     brand_id: int
 
 @item.post('/create')
-async def create_item(new_item: CreateItem, db: AsyncSession = Depends(get_session)):
-    product = Product(product_name=new_item.product_name, description=new_item.description,
-                      quantity=new_item.quantity, cost=new_item.cost, category_id=new_item.category_id)
+async def create_item(
+    product_name: str = Form(...),
+    description: str = Form(...),
+    quantity: int = Form(...),
+    cost: int = Form(...),
+    category_id: int = Form(...),
+    brand_id: int = Form(...),
+    image: UploadFile = File(...),
+    db: AsyncSession = Depends(get_session),
+):
+    with open(f'../img/{image.filename}', "wb") as f:
+        f.write(image.file.read())
+    product = Product(
+        product_name=product_name,
+        description=description,
+        quantity=quantity,
+        cost=cost,
+        category_id=category_id,
+        brand_id=brand_id,
+        img=image.filename,  # Сохраняем имя файла изображения
+    )
+
     try:
         db.add(product)
         await db.commit()
         return {'message': 'Success'}
-    except:
-        raise HTTPException(status_code=400, detail='data invalid')
+    except Exception as e:
+        raise HTTPException(status_code=400, detail='Data invalid')
 
 
 class AddCategoryOrBrand(BaseModel):
@@ -58,6 +79,7 @@ async def create_brand(add_brand: AddCategoryOrBrand, db: AsyncSession = Depends
 async def get_all_item(db: AsyncSession = Depends(get_session)):
     result = await db.execute(select(Product))
     items = result.scalars().all()
+
     return items
 
 
@@ -74,7 +96,9 @@ async def get_items_by_name(search: str, db: AsyncSession = Depends(get_session)
 async def get_item_by_id(item_id: int, db: AsyncSession = Depends(get_session)):
     try:
         result = await db.execute(select(Product).where(Product.id == item_id))
-        return result.scalar_one()
+        item = result.scalar_one()
+        category = await db.execute(select(Category).where(Category.id == item.category_id))
+        return {**item.__dict__, 'category_name': category.scalar_one().category_name}
     except:
         raise HTTPException(status_code=404, detail='item not found')
 
