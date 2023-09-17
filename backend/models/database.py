@@ -1,6 +1,6 @@
 import jwt
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, String, JSON, Integer, ForeignKey, TIMESTAMP, Text
+from sqlalchemy import Column, String, Integer, ForeignKey, TIMESTAMP, Text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
